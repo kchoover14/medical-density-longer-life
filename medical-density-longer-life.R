@@ -93,12 +93,12 @@ expectancy = drop_na(expectancy, lifeExpectancy)
 expectancy$Country = gsub('[[:punct:] ]+', ' ', expectancy$Country)
 
 # Save merged dataset
-write.csv(expectancy, 'finalData-Expectency.csv', row.names = FALSE, quote = FALSE)
+write.csv(expectancy, 'who_density_life_expectancy_merged.csv', row.names = FALSE, quote = FALSE)
 
 ######################## TIME SERIES ANALYSIS
 
 # Load pre-merged dataset (start here if skipping DATA ACQUISITION and DATA CLEANING)
-expectancy = read.csv('finalData-Expectency.csv')
+expectancy = read.csv('who_density_life_expectancy_merged.csv')
 
 # Summarize median life expectancy by region and year
 timeSeries = expectancy |>
@@ -292,7 +292,7 @@ summary(densityModel)
 
 # Export tidy model results
 tidyDensityModel = tidy(densityModel)
-write.csv(tidyDensityModel, 'hoover-brief-results.csv', row.names = FALSE)
+write.csv(tidyDensityModel, 'healthcare_density_regression_results.csv', row.names = FALSE)
 
 ######################## CHOROPLETH MAP
 
