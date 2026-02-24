@@ -232,8 +232,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Repository:</strong> <a href="https://github.com/kchoover14/medical-density-longer-life">github.com/kchoover14/medical-density-longer-life</a></p>
 <p><strong>Data:</strong></p>
 <ul>
-<li>WHO GHO indicators downloaded via public API (HWF_0010, HWF_0001, HWF_0006, WHOSIS_000001); merged dataset included in repo as <code>finalData-Expectency.csv</code></li>
-<li>Life expectancy source data (<code>Life-Expectancy-Data-Updated.csv</code>) from <a href="https://www.kaggle.com/datasets/lashagoch/life-expectancy-who-updated/">Kaggle</a></li>
+<li>WHO GHO indicators (HWF_0010, HWF_0001, HWF_0006) downloaded via public API; life expectancy (WHOSIS_000001) from <a href="https://www.kaggle.com/datasets/lashagoch/life-expectancy-who-updated/">Kaggle</a> – both sources included in repo</li>
 </ul>
 <p><strong>Code:</strong></p>
 <ul>
@@ -241,8 +240,10 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Project Artifacts:</strong></p>
 <ul>
+<li><code>Life-Expectancy-Data-Updated.csv</code> – source life expectancy data from Kaggle (179 countries, 2000–2015)</li>
+<li><code>who_density_life_expectancy_merged.csv</code> – merged WHO density and life expectancy dataset; final analysis input</li>
 <li><code>dentist_density_map.html</code> – interactive choropleth of global dentist density</li>
-<li><code>hoover-brief-results.csv</code> – tidy linear regression model results</li>
+<li><code>healthcare_density_regression_results.csv</code> – tidy linear regression model results (term, estimate, std.error, statistic, p.value)</li>
 <li>Figures (n=10): time series, scatterplots by provider type (full dataset, &gt;= 60 subset, &lt; 60 subset)</li>
 </ul>
 <p><strong>Environment:</strong></p>
