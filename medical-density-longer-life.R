@@ -115,7 +115,6 @@ timeSeries |>
   labs(
     x = "Year",
     y = "Life Expectancy",
-    title = 'Annual Life Expectancy by Region',
     caption = "Source: World Health Organization",
     color = "Country"
   ) +
@@ -316,8 +315,6 @@ dentistMap = plot_geo(dentDensity, height = 500) |>
     y      = 0.5
   ) |>
   layout(
-    title  = list(text = "",
-                  font = list(size = 14)),
     geo    = list(
       showframe    = FALSE,
       showcoastlines = TRUE,
