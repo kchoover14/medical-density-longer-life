@@ -299,7 +299,7 @@ write.csv(tidyDensityModel, 'healthcare_density_regression_results.csv', row.nam
 dentDensity = expectancy |> dplyr::select(Country, iso3, dentists)
 l = list(color = toRGB("grey"), width = 0.5)
 
-dentistMap = plot_geo(dentDensity) |>
+dentistMap = plot_geo(dentDensity, height = 500) |>
   add_trace(
     z = ~dentists,
     color = ~dentists,
@@ -308,7 +308,22 @@ dentistMap = plot_geo(dentDensity) |>
     locations = ~iso3,
     marker = list(line = l)
   ) |>
-  colorbar(title = 'Dentist Density')
+  colorbar(
+    title  = 'Dentist Density',
+    thickness = 15,
+    len    = 0.6,
+    x      = 1.0,
+    y      = 0.5
+  ) |>
+  layout(
+    title  = list(text = "",
+                  font = list(size = 14)),
+    geo    = list(
+      showframe    = FALSE,
+      showcoastlines = TRUE,
+      projection   = list(type = "natural earth")
+    ),
+    margin = list(l = 0, r = 80, t = 50, b = 20)
+  )
 
 htmlwidgets::saveWidget(dentistMap, 'dentist_density_map.html', selfcontained = TRUE)
-
